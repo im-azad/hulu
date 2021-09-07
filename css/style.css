@@ -13,6 +13,7 @@ body {
 	color: #fff;
 	line-height: 1.7;
 	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 a {
 	color: #fff;
@@ -270,10 +271,43 @@ h4 {
 	border-radius: 5px;
 }
 .live-content-area .section-title {
-	padding: 100px;
+	padding: 130px 0;
+	position: relative;
 }
 .view-more-btn {
 	text-decoration: underline;
+}
+
+.scroll-down {
+	position: absolute;
+	bottom: 30px;
+	width: 20px;
+	height: 30px;
+	cursor: pointer;
+}
+.scroll-down::after {
+	content: '';
+	position: absolute;
+	top: 30%;
+	border: 2px solid #fff;
+	width: 20px;
+	height: 20px;
+	transform: translate(-50%, -50%) rotate(45deg);
+	border-top: transparent;
+	border-left: transparent;
+	width: 10px;
+	height: 10px;
+	animation: scroll-down 1s ease-in-out infinite alternate;
+}
+
+@keyframes scroll-down {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+		top: 70%;
+	}
 }
 
 /* Live sports style */
@@ -405,7 +439,7 @@ h4 {
 }
 .modal-box {
 	width: 400px;
-	margin: 10% auto;
+	margin: 5% auto;
 	background: #fff;
 	color: #333;
 	position: relative;
@@ -577,7 +611,7 @@ h4 {
 		grid-template-columns: 1fr 1fr;
 	}
 	.live-content-area .section-title {
-		padding: 30px 10px;
+		padding: 100px 10px;
 	}
 	.live-sports-area {
 		padding: 50px 10px;
